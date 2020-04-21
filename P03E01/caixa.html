@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa</title>
+    <link rel="shortcut icon" href="img/icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/script.js"></script>
+</head>
+
+<body>
+    <h1> Registro de Venda</h1>
+    <form action="">
+        <fieldset>
+            <legend>Dados do cliente</legend>
+            <div>
+                <label for="iptNome">Nome do cliente:</label>
+                <input id="iptNome" type="text" name="iptNome" placeholder="Ex. João da Silva">
+            </div>
+            <div>
+                <label for="iptTelefone">Celular/Telefone:</label>
+                <input id="iptTelefone" type="number" name="iptTelefone" placeholder="Ex. (67) 9 9999-9999">
+            </div>
+            <div>
+                <label for="iptCPF">CPF:</label>
+                <input id="iptCPF" type="number" name="iptCPF" placeholder="Ex. 999.9999.999-99">
+            </div>
+            <div>
+                <label for="iptTotalCompra">Total da compra:</label>
+                <input id="iptTotalCompra" type="number" name="iptTotalCompra" placeholder="Ex. 100,00">
+            </div>
+        </fieldset>
+        <fieldset class="fieldset-pagamento">
+            <legend>Forma de pagamento</legend>
+            <div>
+                <input type="radio" id="formaDinheiro" name="rdoFormapagamento" value="0">
+                <label for="formaDinheiro">Dinheiro</label>
+            </div>
+            <div>
+                <input type="radio" id="formaCredito" name="rdoFormapagamento" value="1">
+                <label for="formaCredito">Cartão de crédito</label>
+            </div>
+            <div>
+                <input type="radio" id="formaDebito" name="rdoFormapagamento" value="2">
+                <label for="formaDebito">Cartão de débito</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Parcelamento</legend>
+            <div>
+                <label for="">Quantidade de parcelas</label>
+                <select id="selQtdParcela">
+            <option value="0"> -- Selecione uma forma de pagamento -- </option>
+            <option value="1"> À vista </option>
+            <option value="2"> 2 parcelas </option>
+            <option value="3"> 3 parcelas </option>
+            <option value="4"> 4 parcelas </option>
+            <option value="5"> 5 parcelas </option>
+            <option value="6"> 6 parcelas </option>
+            <option value="7"> 7 parcelas </option>
+            </select>
+            </div>
+        </fieldset>
+        <div class="div-buttons">
+            <button class="btn-cancel" type="button" onclick="cancel()">Cancelar</button>
+            <button class="btn-save" type="button" onclick="save()">Salvar</button>
+        </div>
+        <div id="div-alerta" class="div-alerta">
+            <div>
+                <img src="img/check.svg" alt="ok">
+                <span>Mensagem</span>
+            </div>
+            <img src="img/close.svg" alt="fechar" onclick="closeAlerta()">
+        </div>
+    </form>
+    <div class="div-resumo">
+        <p>Dados da venda</p>
+        <pre>
+            teste
+         </pre>
+    </div>
+</body>
+
+</html>
