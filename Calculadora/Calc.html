@@ -1,0 +1,173 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="calc.css">
+    <script type="text/javascript" src="calc.js"></script>
+    <link rel="shortcut icon" href="img\icone.png" type="icon">
+</head>
+
+<body>
+    <h1>Calculadora amadora</h1>
+    <div class="divMain">
+        <div id="Main" class="container">
+            <div id="MainHeader" class="header ciano radius">
+                Calculadora
+                <button id="btnMarker" title="Flutuar" onclick="setMarker()" class="marker">
+                <img id="imgMarker" src="img/fix.png" alt="" width="20px" height="20px">
+             </button>
+            </div>
+            <div class="divResultado radius">
+                <input id="_memoryCalc" type="text" class="memoryCalc" readonly value="">
+                <input id="_resultado" type="text" class="resultado" readonly value="0">
+            </div>
+            <div class="linha">
+                <input type="button" title="Apaga o ultimo número (BackSpace)" onclick="sendChar('B')" value="&larrhk;" class="geral btn-funcao contorno lr-margin radius">
+                <input type="button" title="Inversão de valores (F9)" onclick="sendChar('I')" value="&PlusMinus;" class="geral  btn-funcao contorno lr-margin radius">
+                <input type="button" title="Raiz quadrada" onclick="sendChar('V')" value="&radic;" class="geral btn-funcao contorno lr-margin radius">
+                <input type="button" title="Limpa a entrada de Valor (Esc)" onclick="sendChar('CE')" value="CE" class="geral btn-funcao contorno lr-margin radius">
+                <input type="button" title="Reinicia o calculo (C)" onclick="sendChar('C')" value="C" class="geral red contorno lr-margin radius">
+            </div>
+            <div class="linha">
+                <input type="button" title="" onclick="sendChar('7')" value="7" class="geral btn-number contorno top-margin lr-margin radius">
+                <input type="button" title="" onclick="sendChar('8')" value="8" class="geral btn-number contorno top-margin lr-margin radius">
+                <input type="button" title="" onclick="sendChar('9')" value="9" class="geral btn-number contorno top-margin lr-margin radius">
+                <input type="button" title="Divisão" onclick="sendChar('/')" value="&divide" class="geral btn-funcao contorno top-margin lr-margin radius">
+                <input type="button" title="Percentagem" onclick="sendChar('%')" value="&percnt;" class="geral btn-funcao contorno top-margin lr-margin radius">
+            </div>
+            <div class="linha ">
+                <div class="lado-esquerdo">
+                    <div class="linha">
+                        <input type="button" title="" onclick="sendChar('4')" value="4" class="geral btn-number contorno top-margin lr-margin radius">
+                        <input type="button" title="" onclick="sendChar('5')" value="5" class="geral btn-number contorno top-margin lr-margin radius">
+                        <input type="button" title="" onclick="sendChar('6')" value="6" class="geral btn-number contorno top-margin lr-margin radius">
+                        <input type="button" title="Multiplicação" onclick="sendChar('*')" value="&times;" class="geral btn-funcao contorno top-margin lr-margin radius">
+                    </div>
+                    <div class="linha top-margin">
+                        <input type="button" title="" onclick="sendChar('1')" value="1" class="geral btn-number contorno top-margin lr-margin radius">
+                        <input type="button" title="" onclick="sendChar('2')" value="2" class="geral btn-number contorno top-margin lr-margin radius">
+                        <input type="button" title="" onclick="sendChar('3')" value="3" class="geral btn-number contorno top-margin lr-margin radius">
+                        <input type="button" title="Subtração" onclick="sendChar('-')" value="&minus;" class="geral btn-funcao contorno top-margin lr-margin radius">
+                    </div>
+                    <div class="linha top-margin">
+                        <input type="button" title="" onclick="sendChar('0')" value="0" class=" geral btn-number largo contorno top-margin lr-margin radius">
+                        <input type="button" title="Casa decimal" onclick="sendChar('.')" value="&bull;" class=" geral  contorno top-margin lr-margin radius">
+                        <input type="button" title="Adição" onclick="sendChar('+')" value="&plus;" class=" geral contorno top-margin lr-margin radius">
+                    </div>
+                </div>
+                <div class="lado-direito top-margin">
+                    <input type="button" title="Obter resultado" onclick="sendChar('=')" value="=" class="geral green alto contorno radius">
+                </div>
+            </div>
+        </div>
+
+</body>
+
+
+<script>
+    function setMarker() {
+        var eleBtn = document.getElementById("btnMarker");
+        var eleImg = document.getElementById("imgMarker");
+        var eleMain = document.getElementById("Main");
+        var eleHeader = document.getElementById("MainHeader")
+
+        if (eleBtn.title == "Flutuar") {
+            eleBtn.title = "Fixo";
+            eleImg.src = "img/fixed.png"
+            eleMain.style.position = "static";
+            eleMain.style.margin = "312px auto auto 50%";
+            eleMain.style.zindex = "1000";
+            eleMain.style.left = 50 + '%';
+            eleMain.style.top = 312 + 'px';
+            eleMain.style.translate = "translate(" + -50 + "px," + -50 + "px)";
+            eleHeader.style.cursor = "default";
+
+        } else {
+            eleBtn.title = "Flutuar";
+            eleImg.src = "img/fix.png"
+            eleMain.style.margin = "auto";
+            eleMain.style.position = "absolute";
+            eleMain.style.zindex = "1000";
+            eleMain.style.left = 50 + '%';
+            eleMain.style.top = 312 + 'px';
+            eleMain.style.translate = "translate(" + -50 + "px," + -50 + "px)";
+            eleHeader.style.cursor = "pointer";
+        }
+    }
+
+    function getElementDisplay() {
+        return document.getElementById('_resultado')
+    }
+
+    function getElementMemory() {
+        return document.getElementById('_memoryCalc')
+    }
+    document.body.addEventListener('keydown', function(e) {
+        sendChar(e.key);
+        e.keyCode = NaN;
+    });
+
+    function sendChar(AValue) {
+        setNumber(AValue, getElementDisplay(), getElementMemory());
+    }
+
+
+    /*para arrastar - Start*/
+    window.onload = function() {
+        Dragable(document.getElementById("Main"));
+    };
+
+    //Adiciona eventos pra navegadores modernos e antigos
+    function addEvent(el, type, callback) {
+        if (el.addEventListener) {
+            el.addEventListener(type, callback);
+        } else if (el.attachEvent) {
+            el.attachEvent("on" + type, callback);
+        }
+    }
+
+    function Dragable(el) {
+        // if (el.id == "MainHeader") 
+        {
+            var isMove = false, //Verifica se esta se movendo
+                x = 0,
+                y = 0, //Pega as coordenadas do mouse
+                xel = 0,
+                yel = 0; // ultima posição do elemento
+
+            addEvent(el, "mousedown", function(e) {
+                isMove = true;
+
+                el.className += " isMoving";
+
+                x = window.event ? window.event.clientX : e.pageX;
+                y = window.event ? window.event.clientY : e.pageY;
+
+                xel = x - el.offsetLeft;
+                yel = y - el.offsetTop;
+
+            });
+
+            addEvent(document, "mousemove", function(e) {
+                if (isMove) {
+                    e.preventDefault();
+
+                    x = window.event ? window.event.clientX : e.pageX;
+                    y = window.event ? window.event.clientY : e.pageY;
+
+                    el.style.left = (x - xel) + 'px';
+                    el.style.top = (y - yel) + 'px';
+                }
+            });
+
+            addEvent(document, "mouseup", function() {
+                el.className = String(el.className).replace(/(^|\s)isMoving(\s|$)/g, " ");
+                isMove = false;
+            });
+        };
+    };
+
+    /*para arrastar - End*/
+</script>
+
+</html>

@@ -1,0 +1,185 @@
+h1 {
+    text-align: center;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+}
+
+.divMain {
+    position: relative;
+}
+
+.container {
+    margin: auto;
+    width: 323px;
+    padding: 2.5px;
+    border: 1.5px solid #838bff81;
+    box-shadow: 1px 1px 4px 0px rgba(176, 176, 176, 1);
+    height: 425px;
+    background-color: rgb(199, 199, 199);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*para arrastar - Start*/
+    position: absolute;
+    left: 50%;
+    top: 312px;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    /*para arrastar - End*/
+}
+
+
+/*para arrastar - Start*/
+
+.isMoving {
+    z-index: 1001 !important;
+}
+
+
+/*para arrastar - End*/
+
+.header {
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.divResultado {
+    margin: 2px 0 2px 0;
+    border: 1px rgba(128, 128, 128, 0.685) solid;
+    background-color: #F8F8F8;
+    display: block;
+}
+
+.MemoryCalc {
+    margin: 2px 0 2px 0;
+    font-size: 15px;
+    padding: 0px 15px;
+    text-align: right;
+    width: 100%;
+    height: 5%;
+    border: none;
+    background-color: transparent;
+    color: gray;
+}
+
+.resultado {
+    margin: 0;
+    font-size: 24px;
+    padding: 25px 5px;
+    font-weight: 700;
+    text-align: right;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+}
+
+input:focus {
+    outline: none;
+}
+
+.linha {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.geral {
+    padding: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    float: left;
+    width: 23.5%;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.lado-esquerdo {
+    width: 80%;
+}
+
+.lado-direito {
+    width: 19.5%;
+}
+
+.contorno {
+    border: 1px solid rgba(0, 0, 0, 0.507);
+}
+
+.largo {
+    padding: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    float: left;
+    width: 48.5%;
+}
+
+.small {
+    padding: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #F2F2F2;
+    float: left;
+    width: 31.5%;
+}
+
+.alto {
+    height: 100%;
+    width: 97%;
+}
+
+.marker {
+    float: right;
+    background-color: transparent;
+    border: none;
+}
+
+.green {
+    background: linear-gradient(to top, rgb(127, 180, 223), rgb(216, 238, 255));
+}
+
+.red {
+    background: linear-gradient(to top, rgb(223, 115, 115), rgba(226, 195, 195, 0.89))
+}
+
+.grey {
+    background-color: #F2F2F2;
+}
+
+.ciano {
+    background-color: rgba(119, 136, 153, 0.63);
+}
+
+.btn-funcao {
+    background: linear-gradient(to top, rgba(214, 205, 205, 0.87), white);
+}
+
+.btn-number {
+    background: linear-gradient(to top, rgba(232, 250, 255, 0.932), white);
+}
+
+.white-text {
+    color: #fff;
+}
+
+.top-margin {
+    margin-top: 2px;
+}
+
+.lr-margin {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.radius {
+    border-radius: 5px;
+}
+
+.geral:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to bottom, rgb(255, 248, 182), white);
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Friend</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/script.js"></script>
+    <link rel="shortcut icon" href="img/icon.svg" type="image/x-icon">
+</head>
+
+<body>
+    <div class="div-content">
+        <div class="div-header">
+            <img src="img/imgWellcome.svg" alt="Bem vindo!">
+        </div>
+        <div class="div-scroll">
+            <script>
+                clearChat();
+            </script>
+        </div>
+        <div class="div-footer">
+            <p>Escolha a sua resposta abaixo:</p>
+            <div class="div-buttons">
+                <button onclick="sendMessage('tmSend','Olá!',0)">Olá!</button>
+                <button onclick="sendMessage('tmSend','Não te gosto!',1)">Não te gosto!</button>
+                <button onclick="sendMessage('tmSend','Está elegante hoje!',2)">Está elegante hoje!</button>
+            </div>
+            <div class="div-trash">
+                <button onclick="clearChat()">  
+                        <img src="img/imgTrash.svg" alt="Limpar Chat">
+                    </button>
+            </div>
+        </div>
+</body>
+
+</html>

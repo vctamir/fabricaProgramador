@@ -1,0 +1,40 @@
+body {
+    background-color: rgb(253, 253, 253);
+    color: rgb(59, 59, 59);
+    font-family: sans-serif;
+}
+
+.div-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+.div-container button {
+    font-size: 15pt;
+    padding: 25px;
+    border-color: lightgray;
+    border-style: solid;
+    background-color: white;
+    outline: none;
+    border-width: 0.05px;
+    max-width: 160px;
+    margin-top: 5px;
+    margin-left: -1px;
+}
+
+.div-container button:active {
+    background-color: lightslategray;
+    color: white;
+}
+
+.div-top {
+    margin: 100px 15px;
+    text-align: center;
+}
+
+.div-top p {
+    margin: auto;
+    max-width: 360px;
+    font-size: 18pt;
+}

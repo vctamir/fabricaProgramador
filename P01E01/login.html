@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="Login.css">
+    <meta charset="UTF-8">
+    <title>Página de Login</title>
+</head>
+<body>
+    <img src="img\logo.png" alt="Logo" class="imgLogo">
+    <h1>LoginNet</h1>
+    <div class="divLogin">
+        <form>
+            <img src="img\login.png" alt="some text" class="imgLogin">
+            <input id="emailLogin" title="Infotme seu email" type="email" name="emailLogin" placeholder="Email" required onkeypress="volta()">
+            <input title="Informe sua senha" type="password" name="passwordLogin" placeholder="Senha" required>
+            <div>
+                <input type="checkbox" name="Lembrar" class="check">
+                <label for="Lembrar"> Manter conectado </label>
+            </div>
+            <button title="Fazer o login" class="btnSend" onclick="validate()"> Entrar</button>
+            <a href="ResetPassWord.html">Esqueci minha senha</a>
+            <a href="SignUp.html" class="a1">Criar Conta</a>
+        </form>
+    </div>
+    <script>
+        function validate() {
+            document.getElementById("emailLogin").style.color = "red";
+
+        };
+        function volta(){
+            document.getElementById("emailLogin").style.color = "white";
+        }
+    </script>
+</body>
+
+</html>

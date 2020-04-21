@@ -1,0 +1,117 @@
+body {
+    padding: 2%;
+    background: linear-gradient(to right, rgb(242, 238, 255), rgb(242, 238, 255));
+    font-family: sans-serif
+}
+
+h1 {
+    text-decoration: none;
+    font-weight: lighter;
+    font-size: xx-large;
+}
+
+h3 {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: gray;
+    margin-bottom: 0px;
+}
+
+div {
+    border-radius: 20px;
+    border-color: transparent;
+    width: 100%;
+    margin: auto;
+    transition-duration: 0.2s;
+    animation: cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.div-content {
+    border-radius: 20px;
+    border-color: transparent;
+    display: inline-block;
+    width: 100%;
+    margin: auto;
+}
+
+.div-cards {
+    background-color: white;
+    padding: 15px;
+    width: 25%;
+    margin: 10px;
+    min-width: 150px;
+    box-shadow: 5px 5px 5px 5px rgba(158, 108, 108, 0.171);
+    float: left;
+}
+
+.div-comments-Blue {
+    /* display: inline-block; */
+    background-color: rgb(73, 76, 251);
+    color: white;
+    font-size: 10pt;
+    padding: 25px;
+    width: 44%;
+    margin: 1%;
+    box-shadow: 5px 5px 5px 5px rgba(158, 108, 108, 0.171);
+    float: left;
+}
+
+.div-comments-White {
+    /* display: inline-block; */
+    background-color: white;
+    font-size: 10pt;
+    padding: 25px;
+    width: 44%;
+    margin: 1%;
+    box-shadow: 5px 5px 5px 5px rgba(158, 108, 108, 0.171);
+    box-decoration-break: clone;
+    float: left;
+}
+
+.div-cards:hover {
+    transform: scale(1.05);
+}
+
+.div-comments-blue:hover {
+    transform: scale(1.05);
+}
+
+.div-comments-White:hover {
+    transform: scale(1.05);
+}
+
+label {
+    display: block;
+}
+
+.label-title {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: gray;
+    margin: 0;
+}
+
+.label-valores {
+    font-size: 30pt;
+    margin: auto;
+    margin-left: 0;
+    padding: 8px;
+    height: fit-content;
+    min-width: 30%;
+}
+
+.label-positive {
+    font-weight: 900;
+    font-size: 13pt;
+    color: rgb(73, 76, 251);
+    margin: 0 auto 0 auto;
+    text-align: center;
+}
+
+.label-negative {
+    font-weight: 900;
+    font-size: 13pt;
+    color: rgba(255, 0, 0, 0.63);
+    margin: 0 auto 0 auto;
+    text-align: center;
+}

@@ -1,0 +1,139 @@
+* {
+    outline: none;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: rgb(50, 50, 50);
+    font-family: sans-serif;
+    height: 95%;
+}
+
+.div-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.div-header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.div-header img {
+    margin: 10px auto;
+    width: 64px;
+    height: 64px;
+}
+
+.div-scroll {
+    margin: 15px auto;
+    width: 90%;
+    height: 100%;
+    border-style: solid;
+    border-color: rgb(147, 147, 147);
+    border-width: 1px;
+    border-radius: 25px;
+    padding: 15px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.div-footer {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.div-footer div {
+    display: flex;
+    margin: 10px auto;
+}
+
+.div-footer p {
+    margin: auto;
+    color: rgb(147, 147, 147);
+}
+
+.div-footer img {
+    width: 24px;
+}
+
+.div-trash button {
+    padding: 15px 17px;
+    background-color: rgb(147, 147, 147);
+    border-radius: 100px;
+    border: none;
+}
+
+.div-buttons button {
+    padding: 25px;
+    margin-left: -1px;
+    background-color: white;
+    border-color: rgb(196, 196, 196);
+    border-style: solid;
+    border-width: 1px;
+}
+
+.div-buttons button:hover {
+    background-color: rgb(255, 251, 141);
+}
+
+.div-trash button:hover {
+    background-color: rgb(243, 32, 32);
+}
+
+.span-send {
+    padding: 15px;
+    background-color: rgb(255, 251, 141);
+    border-radius: 20px 20px 0px 20px;
+}
+
+.span-reiceved {
+    padding: 15px;
+    background-color: white;
+    border-radius: 0px 20px 20px 20px;
+}
+
+.div-send {
+    margin: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.div-reiceved {
+    margin: 5px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+/* Scrollbar styles */
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    border: 1px solid rgb(128, 210, 235);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(10, 100, 141);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1c6eba;
+}
