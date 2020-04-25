@@ -6,7 +6,7 @@ function messageReiceved(objScroll, strTexto) {
     objScroll.innerHTML = objScroll.innerHTML + (
         `<div class='div-reiceved'> 
             <span class='span-reiceved'>
-              ` + strTexto + `
+              ${strTexto}
             </span>
         </div>`);
 }
@@ -15,7 +15,7 @@ function messageSend(objScroll, strTexto, typeAnswer) {
     objScroll.innerHTML = objScroll.innerHTML + (
         `<div class='div-send'> 
             <span class='span-send'>
-              ` + strTexto + `
+              ${strTexto}
             </span>
         </div>`);
 
